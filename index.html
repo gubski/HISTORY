@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Первые государственные образования на территории Беларуси</title>
+<style>
+:root{--ink:#1c2a2e;--mut:#4d5f63;--blue:#2f5d7c;--gold:#a8843a;--base:#dde4df;
+--glass:linear-gradient(135deg,rgba(255,255,255,.62),rgba(255,255,255,.26));
+--font:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Segoe UI",Roboto,system-ui,sans-serif;--ease:cubic-bezier(.2,.8,.2,1)}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;overflow:hidden;background:var(--base);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased}
+.bg{position:fixed;inset:0;z-index:0;overflow:hidden}
+.bg i{position:absolute;width:62vmax;height:62vmax;border-radius:50%;filter:blur(70px);opacity:.75;animation:drift 26s ease-in-out infinite alternate}
+.bg i:nth-child(1){background:#9fb7c8;left:-15vmax;top:-20vmax}
+.bg i:nth-child(2){background:#a9c0ad;right:-20vmax;top:10vmax;animation-delay:-9s;animation-duration:32s}
+.bg i:nth-child(3){background:#dcc99a;left:20vmax;bottom:-30vmax;animation-delay:-15s;opacity:.6}
+.bg i:nth-child(4){background:#6f90ad;right:5vmax;bottom:-25vmax;animation-delay:-4s;opacity:.35}
+@keyframes drift{to{transform:translate(8vmax,6vmax) scale(1.15) rotate(30deg)}}
+.deck{position:fixed;inset:0;z-index:1}
+.slide{position:absolute;inset:0;padding:max(5vh,28px) 6vw 84px;overflow-y:auto;opacity:0;visibility:hidden;transform:translateX(5vw) scale(.97);filter:blur(10px);transition:opacity .7s var(--ease),transform .8s var(--ease),filter .7s var(--ease),visibility 0s .8s}
+.slide.before{transform:translateX(-5vw) scale(.97)}
+.slide.on{opacity:1;visibility:visible;transform:none;filter:none;transition-delay:0s}
+.wrap{max-width:1180px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;justify-content:center;gap:18px}
+[data-r]{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .8s var(--ease)}
+.on [data-r]{opacity:1;transform:none;transition-delay:calc(var(--i,0)*90ms + 200ms)}
+h1{font-size:clamp(34px,6vw,76px);line-height:1.04;letter-spacing:-.03em;font-weight:700}
+h2{font-size:clamp(26px,3.8vw,48px);line-height:1.08;letter-spacing:-.025em;font-weight:700}
+h3{font-size:clamp(15px,1.5vw,19px);font-weight:650;letter-spacing:-.01em;margin-bottom:6px}
+p,li{font-size:clamp(13px,1.25vw,16px);line-height:1.5;color:var(--mut)}
+p b,li b{color:var(--ink);font-weight:600}
+.lead{font-size:clamp(15px,1.7vw,21px);color:var(--ink);max-width:62ch;line-height:1.4}
+.tag{font-size:13px;color:var(--blue);font-weight:600;letter-spacing:.01em}
+.glass{position:relative;padding:18px 20px;border-radius:24px;background:var(--glass);backdrop-filter:blur(24px) saturate(165%);-webkit-backdrop-filter:blur(24px) saturate(165%);border:1px solid rgba(255,255,255,.7);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -1px 0 rgba(255,255,255,.25),0 12px 40px rgba(28,42,46,.12);overflow:hidden}
+.glass::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(260px circle at var(--mx,30%) var(--my,0%),rgba(255,255,255,.55),transparent 65%);opacity:.7}
+.glass>*{position:relative}
+.g{display:grid;gap:14px}.c2{grid-template-columns:repeat(2,1fr)}.c3{grid-template-columns:repeat(3,1fr)}
+.split{display:grid;grid-template-columns:1.15fr 1fr;gap:18px;align-items:stretch}
+ul{padding-left:18px;display:grid;gap:5px}
+.orn{height:14px;width:min(420px,70%);background:repeating-linear-gradient(90deg,var(--blue) 0 14px,transparent 14px 18px);-webkit-mask:repeating-linear-gradient(90deg,#000 0 14px,transparent 14px 18px);opacity:.75;clip-path:polygon(0 50%,7px 0,14px 50%,7px 100%)}
+.orn{background:none;height:16px;width:min(440px,70%);background-image:linear-gradient(45deg,var(--blue) 25%,transparent 25%,transparent 75%,var(--blue) 75%),linear-gradient(45deg,var(--gold) 25%,transparent 25%,transparent 75%,var(--gold) 75%);background-size:16px 16px;background-position:0 0,8px 8px;-webkit-mask:none;clip-path:none;opacity:.8;border-radius:3px}
+.chain{display:flex;align-items:center;gap:10px}.chain .glass{flex:1}.chain .ar{font-size:26px;color:var(--blue);opacity:.7}
+.ph{margin:0;min-height:200px;border-radius:22px;overflow:hidden;position:relative;background:linear-gradient(135deg,rgba(255,255,255,.5),rgba(255,255,255,.2));border:1px solid rgba(255,255,255,.7);box-shadow:0 12px 40px rgba(28,42,46,.14);display:flex;flex-direction:column}
+.ph img{width:100%;flex:1;min-height:0;object-fit:cover;display:block}
+.ph figcaption{font-size:12px;color:var(--ink);padding:8px 12px;background:rgba(255,255,255,.55);backdrop-filter:blur(14px)}
+.ph .hint{display:none;margin:auto;padding:18px;text-align:center;font-size:12.5px;color:var(--mut)}
+.ph.empty img{display:none}.ph.empty .hint{display:block}
+.ph.empty{min-height:170px}
+details{margin-top:4px}summary{cursor:pointer;font-size:13px;color:var(--blue);font-weight:600}
+details p{margin-top:6px;font-size:13px}
+.hub{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.hub .core{grid-column:2;grid-row:2;text-align:center;background:linear-gradient(135deg,rgba(47,93,124,.88),rgba(47,93,124,.7));border-color:rgba(255,255,255,.4)}
+.hub .core h3,.hub .core p{color:#fff}
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:5;display:flex;align-items:center;justify-content:center;gap:14px;padding:14px 18px calc(14px + env(safe-area-inset-bottom,0px))}
+.pill{display:flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:var(--glass);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border:1px solid rgba(255,255,255,.7);box-shadow:0 8px 28px rgba(28,42,46,.14)}
+.pill button{all:unset;cursor:pointer;width:26px;height:26px;display:grid;place-items:center;border-radius:50%;color:var(--ink);font-size:16px}
+.pill button:hover{background:rgba(255,255,255,.6)}
+.pill button:focus-visible,.dot:focus-visible{outline:2px solid var(--blue)}
+.dot{all:unset;cursor:pointer;width:8px;height:8px;border-radius:99px;background:rgba(28,42,46,.25);transition:width .5s var(--ease),background .4s}
+.dot.on{width:26px;background:var(--blue)}
+.bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--gold));z-index:6;transition:width .7s var(--ease)}
+.num{font-size:clamp(34px,5vw,60px);font-weight:700;color:var(--blue);letter-spacing:-.03em;line-height:1}
+@media(max-width:820px){.c3,.c2,.split,.hub{grid-template-columns:1fr}.hub .core{grid-column:auto;grid-row:auto}.chain{flex-direction:column}.chain .ar{transform:rotate(90deg)}.slide{padding-bottom:90px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important}}
+</style>
+</head>
+<body>
+<div class="bg"><i></i><i></i><i></i><i></i></div>
+<div class="bar" id="bar"></div>
+<main class="deck" id="deck">
+
+<!-- 1 -->
+<section class="slide"><div class="wrap">
+<div class="orn" data-r style="--i:0"></div>
+<p class="tag" data-r style="--i:1">История белорусской государственности</p>
+<h1 data-r style="--i:2">Первые государственные образования на территории Беларуси</h1>
+<p class="lead" data-r style="--i:3">Полацкае і Тураўскае княствы: как распад единой Руси, выбор веры и связи с соседями создали основу белорусской государственности.</p>
+<div class="glass" data-r style="--i:4;max-width:460px"><h3>Скаженик Вера Александровна</h3></div>
+</div></section>
+
+<!-- 2 -->
+<section class="slide"><div class="wrap">
+<h2 data-r style="--i:1">Один сюжет в трёх частях</h2>
+<div class="chain" data-r style="--i:2">
+<div class="glass"><span class="num">1</span><h3>Крещение Руси</h3><p>988 г. — цивилизационный выбор: вера, письменность и церковные центры, ставшие основой для земель Полоцка и Турова.</p></div>
+<span class="ar">→</span>
+<div class="glass"><span class="num">2</span><h3>Феодальная раздробленность</h3><p>XI–XIII вв. — как единая Русь распалась на самостоятельные земли: Полоцкую, Туровскую, Смоленскую.</p></div>
+<span class="ar">→</span>
+<div class="glass"><span class="num">3</span><h3>Система международных отношений</h3><p>XI–XIII вв. — как эти земли жили среди Византии, Скандинавии, Польши, Венгрии, Балтики и степи.</p></div>
+</div>
+<div class="glass" data-r style="--i:3"><p><b>Нить рассказа.</b> Доклад идёт по хронологии: сначала выбор 988 г., затем последовавший за ним распад единой державы (1054, 1097, 1132) и, наконец, место самостоятельных земель в системе соседей. Каждая часть вытекает из предыдущей: вера и книжность дали землям основу, раздробленность превратила их в княжества, а внешние связи показали их вес в Европе.</p></div>
+</div></section>
+
+<!-- 3 -->
+<section class="slide"><div class="wrap">
+<h2 data-r style="--i:1">Выбор мира, а не только веры</h2>
+<div class="split">
+<div class="g">
+<div class="glass" data-r style="--i:2"><p><b>988 г.</b> Князь Владимир Святославич принял христианство по византийскому обряду (в Корсуне, брак с Анной, сестрой императоров Василия II и Константина VIII) и крестил Русь. По летописной легенде он выбирал между верами; реально выбирался <b>круг союзов и культурная модель</b>.</p></div>
+<div class="g c2">
+<div class="glass" data-r style="--i:3"><h3>Что дал выбор</h3><ul><li>Кириллическая письменность и книги</li><li>Церковная организация (Киевская митрополия)</li><li>Византийское право и архитектура</li><li>Идея общего «рода» русских земель</li></ul></div>
+<div class="glass" data-r style="--i:4"><h3>Почему «цивилизационный»</h3><ul><li>Русь стала частью византийско-православного мира</li><li>После раскола 1054 г. осталась в его орбите, но связи с Западом сохранились</li><li>Мировоззрение, календарь, образование — единая матрица</li></ul></div>
+</div>
+<div class="glass" data-r style="--i:5"><p><b>На белорусских землях:</b> христианство пришло на рубеже X–XI вв.; в Полоцке — епархия, Софийский собор (XI в.), в Турове — епархия по традиции около 1005 г. Процесс был долгим: языческие верования держались веками.</p></div>
+</div>
+<figure class="ph" data-r style="--i:3">
+<img src="polotsk-sofia.jpg" alt="Софийский собор в Полоцке">
+<figcaption>Софийский собор в Полоцке — XI век</figcaption>
+<div class="hint">Положите фото <b>polotsk-sofia.jpg</b> рядом с index.html</div>
+</figure>
+</div>
+</div></section>
+
+<!-- 4 -->
+<section class="slide"><div class="wrap">
+<h2 data-r style="--i:1">Вера строит собственные центры</h2>
+<div class="g c3">
+<div class="glass" data-r style="--i:2"><h3>Евфросиния Полоцкая</h3><p>Ок. 1104–1167. Основала Спасо-Преображенский монастырь, скрипторий, школу. Заказала знаменитый крест (1161), мастер — Лазарь Богша. Символ духовной зрелости Полоцка.</p></div>
+<div class="glass" data-r style="--i:3"><h3>Кирилл Туровский</h3><p>Ок. 1130–1182. Епископ, автор проповедей и молитв, «белорусский Златоуст». Туровское Евангелие XI в. — один из древнейших письменных памятников на белорусских землях.</p></div>
+<div class="glass" data-r style="--i:4"><h3>Борисовы камни</h3><p>Валуны XII в. с надписями кириллицей на Западной Двине. Это память о князе Борисе, вера и власть здесь записаны в одном знаке.</p></div>
+</div>
+<div class="split" style="grid-template-columns:1fr 1fr">
+<figure class="ph" data-r style="--i:5"><img src="euphrosyne-monastery.jpg" alt="Спасо-Евфросиниевский монастырь"><figcaption>Спасо-Евфросиниевский монастырь, Полоцк</figcaption><div class="hint">Положите фото <b>euphrosyne-monastery.jpg</b> рядом с index.html</div></figure>
+<figure class="ph" data-r style="--i:6"><img src="boris-stone.jpg" alt="Борисов камень"><figcaption>Борисов камень — надпись XII в.</figcaption><div class="hint">Положите фото <b>boris-stone.jpg</b> рядом с index.html</div></figure>
+</div>
+<div class="glass" data-r style="--i:7"><p><b>Связь с дальнейшим:</b> общая вера объединяла земли в одну Русь, но собственные епархии и соборы одновременно закрепляли самостоятельные центры силы — так готовилась раздробленность.</p></div>
+</div></section>
+
+<!-- 5 -->
+<section class="slide"><div class="wrap">
+<h2 data-r style="--i:1">Что это и откуда взялась</h2>
+<div class="glass" data-r style="--i:2"><p><b>Феодальная раздробленность</b> — этап политической децентрализации, когда единое государство распадается на фактически самостоятельные земли и княжества со своим князем, дружиной, вече и боярством. Это закономерная стадия развития феодализма в Европе (Франция, Германия, Польша после 1138 г.). Для Руси традиционная точка отсчёта — <b>1132 г.</b>, смерть Мстислава Великого; по этапам: 1054 (смерть Ярослава Мудрого), 1097 (Любечский съезд), 1132.</p></div>
+<div class="g c3">
+<div class="glass" data-r style="--i:3"><h3>Династическая</h3><p>Лествичное право: князья переходят с «стола» на «стол» по старшинству. Любеч (1097) закрепил принцип: «каждый да держит отчину свою».</p></div>
+<div class="glass" data-r style="--i:4"><h3>Экономическая</h3><p>Натуральное хозяйство: земли жили автономно, собственный центр — город с ремеслом и торговлей.</p></div>
+<div class="glass" data-r style="--i:5"><h3>Социальная</h3><p>Рост городов и боярства: местная знать заинтересована в «своём» князе, а вече ограничивает его власть.</p></div>
+<div class="glass" data-r style="--i:6"><h3>Территориальная</h3><p>Огромное пространство и слабые коммуникации делали управление из Киева всё менее эффективным.</p></div>
+<div class="glass" data-r style="--i:7"><h3>Внешняя</h3><p>Половецкая угроза, упадок пути «из варяг в греки», а после 1204 г. (разгром Константинополя) — ослабление главного торгового партнёра.</p></div>
+<div class="glass" data-r style="--i:8"><h3>Политическая</h3><p>Борьба Рюриковичей за Киев показала: сильная земля может обойтись без него. Центр потерял монополию.</p></div>
+</div>
+</div></section>
+
+<!-- 6 -->
+<section class="slide"><div class="wrap">
+<h2 data-r style="--i:1">Земля важнее центра</h2>
+<div class="split">
+<div class="g">
+<div class="glass" data-r style="--i:2"><h3>Полоцкая земля</h3><p>Возникла на землях кривичей, впервые в летописи — 862 г. Княжил Рогволод; после него — Изяслав (сын Рогнеды), ветвь Изяславичей. Расцвет — Брячислав и <b>Всеслав Чародей</b> (1044–1101). После 1101 г. земля делится между сыновьями Всеслава: выделяются Минское, Витебское, Друцкое, Изяславское, Городенское и другие уделы.</p></div>
+<div class="glass" data-r style="--i:3"><h3>Туровская земля</h3><p>Земля дреговичей на Припяти; Туров назван в летописи под 980 г. Первый князь — Святополк, затем Изяслав Ярославич. Позже от неё отделяются Пинское, Слуцкое, Клецкое, Дубровицкое княжества. Туровские князья часто зависели от Киева.</p></div>
+<div class="glass" data-r style="--i:4"><h3>Другие центры</h3><p>Смоленское княжество, Берестье (самостоятельного княжества не сложилось), Новогрудок — позднее центр новой силы.</p></div>
+</div>
+<div class="g">
+<div class="glass" data-r style="--i:5"><h3>Последствия — позитивные</h3><ul><li>Рост городов, ремесла, торговли</li><li>Развитие местной письменности и архитектуры</li><li>Формирование региональной идентичности</li><li>Опыт самостоятельной политики: вече, князь, боярство</li></ul></div>
+<div class="glass" data-r style="--i:6"><h3>Последствия — негативные</h3><ul><li>Дробление уделов, междоусобицы</li><li>Ослабление обороны перед внешними силами (Орден, монголы, Литва)</li><li>Утрата былого могущества Полоцка</li><li>Рост роли вече при слабой княжеской власти</li></ul></div>
+<div class="glass" data-r style="--i:7"><p><b>Связь:</b> именно раздробленность создала условия, в которых земли позднее вошли в состав Великого княжества Литовского (Полоцк — ок. 1307 г.).</p></div>
+</div>
+</div>
+</div></section>
+
+<!-- 7 -->
+<section class="slide"><div class="wrap">
+<h2 data-r style="--i:1">Русь в XII веке: земли и княжества</h2>
+<div class="split" style="grid-template-columns:1fr 1fr">
+<figure class="ph" data-r style="--i:2;min-height:300px">
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rus-1113-1194.png?width=1100" data-alt="map.png" alt="Русь в 1113–1194 гг.">
+<figcaption>Русь в 1113–1194 гг. Автор: Юрий Корьяков, Wikimedia Commons, CC BY-SA 2.5</figcaption>
+<div class="hint">Карта не загрузилась. Положите файл <b>map.png</b> рядом с index.html.</div>
+</figure>
+<div class="g">
+<div class="glass" data-r style="--i:3"><h3>Как читать карту</h3><p>Найдите Полоцкую и Туровскую земли, Смоленск и Берестье, мелкие уделы — Минск, Витебск, Городен. Видно, что на месте единой державы стоит мозаика земель.</p></div>
+<div class="glass" data-r style="--i:4"><h3>Достоверность</h3><p>Карта подписана как «Русь в 1113–1194 гг.» (период после Мономаха до конца XII в.). Основа — данные OpenStreetMap, автор указан. В описании файла и в статьях проекта фигурируют Минское, Витебское, Городенское, Туровское и другие княжества. <b>Границы условны:</b> летописи не дают точных линий, и у разных авторов они отличаются.</p>
+<details><summary>Что проверять при защите</summary><p>Сверяйте названия княжеств и даты с учебником «История Беларуси» (6 кл.), § 10–11, и статьёй П. Ф. Лысенко о Туровском княжестве. Расхождения в границах — норма, называйте карту схемой.</p></details></div>
+</div>
+</div>
+</div></section>
+
+<!-- 8 -->
+<section class="slide"><div class="wrap">
+<h2 data-r style="--i:1">Земли на перекрёстке путей</h2>
+<div class="hub">
+<div class="glass" data-r style="--i:2"><h3>Византия</h3><p>Вера, книги, мастера. Путь «из варяг в греки» по Днепру и Двине.</p></div>
+<div class="glass" data-r style="--i:3"><h3>Скандинавия</h3><p>Рогволод пришёл «из-за моря»; династические браки: Ярослав Мудрый и Ингигерда.</p></div>
+<div class="glass" data-r style="--i:4"><h3>Польша и Венгрия</h3><p>Браки и союзы Рюриковичей, походы Изяслава Ярославича в Польшу.</p></div>
+<div class="glass" data-r style="--i:5"><h3>Балтика</h3><p>Полоцк брал дань с ливов и летголов по Западной Двине; договор Полоцка с Ригой (ок. 1210); Смоленская торговая правда (1229).</p></div>
+<div class="glass core" data-r style="--i:6"><h3>Земли Беларуси</h3><p>Полацкае, Тураўскае, Смаленскае княствы и уделы</p></div>
+<div class="glass" data-r style="--i:7"><h3>Орден меченосцев</h3><p>С 1202 г. в Прибалтике; новая угроза для Полоцка и соперник за Двину.</p></div>
+<div class="glass" data-r style="--i:8"><h3>Степь</h3><p>Половцы: набеги и союзы в междоусобицах князей.</p></div>
+<div class="glass" data-r style="--i:9"><h3>Литва</h3><p>С XIII в. становится центром объединения земель.</p></div>
+<div class="glass" data-r style="--i:10"><h3>Вывод</h3><p>Земли были не окраиной, а активным участником: торговля, династии, война.</p></div>
+</div>
+</div></section>
+
+<!-- 9 -->
+<section class="slide"><div class="wrap">
+<h2 data-r style="--i:1">От раздробленности к собственной традиции</h2>
+<div class="chain" data-r style="--i:2">
+<div class="glass"><h3>Выбор (988)</h3><p>Общая вера и письменность стали основой для центров в Полоцке и Турове.</p></div><span class="ar">→</span>
+<div class="glass"><h3>Раздробленность (XI–XIII вв.)</h3><p>Распад единой Руси превратил волости в самостоятельные земли.</p></div><span class="ar">→</span>
+<div class="glass"><h3>Место в системе</h3><p>Земли встроились в сеть торговых и династических связей Европы.</p></div>
+</div>
+<div class="split" style="grid-template-columns:1fr 1fr">
+<div class="glass" data-r style="--i:3"><h3>Для обсуждения</h3><ul><li>Была ли раздробленность слабостью или условием самобытности?</li><li>Почему Полоцк сохранял независимость от Киева дольше Турова?</li></ul></div>
+<div class="glass" data-r style="--i:4"><h3>Источники</h3><ul><li>Повесть временных лет</li><li>Лысенко П. Ф. Туровское княжество (X–XIII вв.) // Вестник НАН Беларуси, 2018, № 1, с. 40–49</li><li>История Беларуси, 6 кл. (eior.by), § 10–11</li><li>Карта: Ю. Корьяков, Wikimedia Commons, CC BY-SA 2.5</li></ul></div>
+</div>
+</div></section>
+
+</main>
+<nav class="nav"><div class="pill"><button id="pv" aria-label="Назад">‹</button><span id="dots" style="display:flex;gap:7px;align-items:center;padding:0 4px"></span><button id="nx" aria-label="Вперёд">›</button><button id="fs" aria-label="Во весь экран">⛶</button></div></nav>
+<script>
+(function(){
+var S=[].slice.call(document.querySelectorAll('.slide')),n=S.length,cur=-1,dots=document.getElementById('dots'),bar=document.getElementById('bar');
+S.forEach(function(_,i){var d=document.createElement('button');d.className='dot';d.setAttribute('aria-label','Слайд '+(i+1));d.onclick=function(){go(i)};dots.appendChild(d)});
+function go(i){i=Math.max(0,Math.min(n-1,i));if(i===cur)return;S.forEach(function(s,k){s.classList.toggle('on',k===i);s.classList.toggle('before',k<i);if(k===i)s.scrollTop=0});
+[].forEach.call(dots.children,function(d,k){d.classList.toggle('on',k===i)});bar.style.width=((i+1)/n*100)+'%';cur=i;try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
+document.getElementById('pv').onclick=function(){go(cur-1)};document.getElementById('nx').onclick=function(){go(cur+1)};
+document.getElementById('fs').onclick=function(){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()};
+document.addEventListener('keydown',function(e){var k=e.key;if(k==='ArrowRight'||k==='PageDown'||k===' '||k==='ArrowDown'){e.preventDefault();go(cur+1)}else if(k==='ArrowLeft'||k==='PageUp'||k==='ArrowUp'){e.preventDefault();go(cur-1)}else if(k==='Home')go(0);else if(k==='End')go(n-1);else if(k==='f'||k==='F'||k==='а'||k==='А')document.getElementById('fs').click()});
+var x0=null,y0=null;document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
+document.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5)go(cur+(dx<0?1:-1));x0=null},{passive:true});
+document.addEventListener('pointermove',function(e){var g=e.target.closest&&e.target.closest('.glass');if(!g)return;var r=g.getBoundingClientRect();g.style.setProperty('--mx',(e.clientX-r.left)+'px');g.style.setProperty('--my',(e.clientY-r.top)+'px')});
+[].forEach.call(document.querySelectorAll('.ph img'),function(img){var fb=img.getAttribute('data-alt');img.addEventListener('error',function(){if(fb&&!img.dataset.t){img.dataset.t=1;img.src=fb}else img.parentNode.classList.add('empty')})});
+var h=parseInt(location.hash.slice(1),10);go(h>=1&&h<=n?h-1:0);
+})();
+</script>
+</body>
+</html>
